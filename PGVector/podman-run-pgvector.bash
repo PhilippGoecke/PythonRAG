@@ -21,5 +21,6 @@ else
         --env POSTGRES_DB=rag_db \
         --env POSTGRES_USER=rag_user \
         --env POSTGRES_PASSWORD=rag_password \
+        --volume pgvector_data:/var/lib/postgresql/data \
         docker.io/pgvector/pgvector:pg18-trixie
 fi
