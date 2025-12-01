@@ -16,10 +16,10 @@ if podman container exists "${CONTAINER_NAME}"; then
 else
     echo "Creating and starting container '${CONTAINER_NAME}'..."
     podman run --name "${CONTAINER_NAME}" \
-        -d \
-        -p 5432:5432 \
-        -e POSTGRES_DB=rag_db \
-        -e POSTGRES_USER=rag_user \
-        -e POSTGRES_PASSWORD=rag_password \
-        docker.io/pgvector/pgvector
+        --detach \
+        --publish 5432:5432 \
+        --env POSTGRES_DB=rag_db \
+        --env POSTGRES_USER=rag_user \
+        --env POSTGRES_PASSWORD=rag_password \
+        docker.io/pgvector/pgvector:pg18-trixie
 fi
