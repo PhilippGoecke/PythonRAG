@@ -22,6 +22,7 @@ else
         --env PGADMIN_DEFAULT_EMAIL=pgadmin@localhost \
         --env PGADMIN_DEFAULT_PASSWORD="pgsecret" \
         --env PGADMIN_CONFIG_CHECK_EMAIL_DELIVERABILITY=False \
+        --env PGADMIN_CONFIG_GLOBALLY_DELIVERABLE=False \
         --volume pgadmin_data:/var/lib/pgadmin \
         --volume "$(pwd)/servers.json:/pgadmin4/servers.json" \
         --restart=always \
