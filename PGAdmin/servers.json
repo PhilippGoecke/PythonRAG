@@ -5,9 +5,10 @@
       "Group": "Servers",
       "Port": 5432,
       "Username": "rag_user",
+      "Password": "rag_password",
       "Host": "host.containers.internal",
       "SSLMode": "prefer",
-      "MaintenanceDB": "postgres"
+      "MaintenanceDB": "rag_db"
     }
   }
 }
