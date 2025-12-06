@@ -17,7 +17,8 @@ else
     echo "Creating and starting container '${CONTAINER_NAME}'..."
     podman run --name "$CONTAINER_NAME" \
         --detach \
-        --publish ":8080" \
+        --publish "8080:80" \
+        --publish "8081:443" \
         --env PGADMIN_DEFAULT_EMAIL=pgadmin@localhost \
         --env PGADMIN_DEFAULT_PASSWORD="pgsecret" \
         --volume pgadmin_data:/var/lib/pgadmin \
