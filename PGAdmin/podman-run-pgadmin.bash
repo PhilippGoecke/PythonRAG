@@ -21,6 +21,7 @@ else
         --publish "8081:443" \
         --env PGADMIN_DEFAULT_EMAIL=pgadmin@localhost \
         --env PGADMIN_DEFAULT_PASSWORD="pgsecret" \
+        --env PGADMIN_CONFIG_CHECK_EMAIL_DELIVERABILITY=False \
         --volume pgadmin_data:/var/lib/pgadmin \
         --restart=always \
         docker.io/dpage/pgadmin4:9.10.0
