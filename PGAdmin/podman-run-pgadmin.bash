@@ -23,7 +23,7 @@ else
         --env PGADMIN_DEFAULT_PASSWORD="pgsecret" \
         --env PGADMIN_CONFIG_CHECK_EMAIL_DELIVERABILITY=False \
         --volume pgadmin_data:/var/lib/pgadmin \
-        --volume "$(pwd)/servers.json:/pgadmin4/servers.json:Z,ro" \
+        --volume "$(pwd)/servers.json:/pgadmin4/servers.json" \
         --restart=always \
         docker.io/dpage/pgadmin4:9.10.0
 fi
