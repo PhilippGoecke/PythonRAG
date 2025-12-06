@@ -28,3 +28,5 @@ else
         --restart=always \
         docker.io/dpage/pgadmin4:9.10.0
 fi
+
+podman logs --follow "${CONTAINER_NAME}"
