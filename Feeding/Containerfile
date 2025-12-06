@@ -1,0 +1,8 @@
+FROM localhost/python:base as vectorizing
+
+RUN pip install langchain-community langchain-text-splitters \
+  && pip install psycopg2-binary sqlalchemy pgvector
+
+COPY embedding.py .
+
+CMD ["python", "embedding.py"]
