@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "PGVector DB",
+      "Group": "Servers",
+      "Port": 5432,
+      "Username": "rag_user",
+      "Host": "host.containers.internal",
+      "SSLMode": "prefer",
+      "MaintenanceDB": "postgres"
+    }
+  }
+}
