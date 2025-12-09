@@ -1,6 +1,7 @@
 FROM localhost/python:base as vectorizing
 
-RUN pip install langchain langchain-community langchain-core psycopg2-binary
+RUN pip install langchain langchain-community langchain-core psycopg2-binary \
+  && pip install langchain-ollama pgvector
 
 COPY rag_chat.py .
 
