@@ -45,12 +45,13 @@ print("Setting up RAG chain...")
 template = """Use the following pieces of context to answer the question at the end.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
 Use three sentences maximum and keep the answer concise.
+Also include the sources of the information you used from the context (e.g., document titles or metadata like source/URL).
 
 Context: {context}
 
 Question: {question}
 
-Helpful Answer:"""
+Helpful Answer (with sources):"""
 prompt = ChatPromptTemplate.from_template(template)
 
 # Initialize the Ollama LLM
