@@ -31,7 +31,7 @@ embeddings = OllamaEmbeddings(
 db = PGVector(
     collection_name=COLLECTION_NAME,
     connection=CONNECTION_STRING,
-    embedding_function=embeddings,
+    embeddings=embeddings,
 )
 
 # --- 2. Setup Retriever ---
