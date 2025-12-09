@@ -30,7 +30,7 @@ embeddings = OllamaEmbeddings(
 # This assumes the collection has already been created and populated.
 db = PGVector(
     collection_name=COLLECTION_NAME,
-    connection_string=CONNECTION_STRING,
+    connection=CONNECTION_STRING,
     embedding_function=embeddings,
 )
 
