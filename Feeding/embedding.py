@@ -2,7 +2,7 @@ import os
 from langchain_community.document_loaders import WebBaseLoader, DirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_ollama import OllamaEmbeddings
-from langchain_community.vectorstores.pgvector import PGVector
+from langchain_postgres import PGVector
 
 # --- Configuration ---
 # Ensure Ollama is running.
@@ -35,8 +35,8 @@ chunks = text_splitter.split_documents(docs)
 print("Initializing embeddings and vector store...")
 # Initialize Ollama embeddings
 embeddings = OllamaEmbeddings(
-      model=EMBEDDING_MODEL,
-      base_url=OLLAMA_HOST
+      base_url=OLLAMA_HOST,
+      model=EMBEDDING_MODEL
     )
 
 # Initialize PGVector vector store
@@ -45,7 +45,7 @@ db = PGVector.from_documents(
     embedding=embeddings,
     documents=chunks,
     collection_name=COLLECTION_NAME,
-    connection_string=CONNECTION_STRING,
+    connection=CONNECTION_STRING,
 )
 
 print("Documents have been embedded and saved to PGVector.")
