@@ -1,10 +1,9 @@
 import os
-from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores.pgvector import PGVector
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
-from langchain_ollama import OllamaEmbeddings
+from langchain_ollama import OllamaEmbeddings, ChatOllama
 
 # --- Configuration ---
 # Ensure Ollama is running.
