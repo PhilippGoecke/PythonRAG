@@ -32,6 +32,7 @@ db = PGVector(
     collection_name=COLLECTION_NAME,
     connection=CONNECTION_STRING,
     embeddings=embeddings,
+    use_jsonb=True
 )
 
 # --- 2. Setup Retriever ---
