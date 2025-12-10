@@ -46,6 +46,7 @@ db = PGVector.from_documents(
     documents=chunks,
     collection_name=COLLECTION_NAME,
     connection=CONNECTION_STRING,
+    use_jsonb=True
 )
 
 print("Documents have been embedded and saved to PGVector.")
